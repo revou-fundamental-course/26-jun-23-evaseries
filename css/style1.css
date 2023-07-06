@@ -1,0 +1,317 @@
+* {
+  padding: 0;
+    margin: 0;
+    box-sizing: 0;
+}
+body{
+    background: #69D2e7;
+}
+nav {
+    border: 1px solid;
+    padding-bottom: 60px;
+}
+   .logo{
+    width: 100px;
+    }
+    #judul{
+        margin-bottom: 30px;
+    }
+    *, *:before, *:after 
+{ box-sizing: border-box; }
+#judul {
+    display: grid;
+    place-items: center;
+    text-align: center;
+}
+
+#judul > h3 {
+    color: black;
+    margin: 0;
+}
+
+#kiri {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+label .menu {
+  position: absolute;
+  right: -100px;
+  top: -100px;
+  z-index: 100;
+  width: 200px;
+  height: 200px;
+  background: #FFF;
+  border-radius: 50% 50% 50% 50%;
+  -webkit-transition: .5s ease-in-out;
+  transition: .5s ease-in-out;
+  box-shadow: 0 0 0 0 #FFF, 0 0 0 0 #FFF;
+  cursor: pointer;
+  
+}
+
+label .hamburger {
+  position: absolute;
+  top: 135px;
+  left: 50px;
+  width: 30px;
+  height: 2px;
+  background: #69D2e7;
+  display: block;
+  -webkit-transform-origin: center;
+  transform-origin: center;
+  -webkit-transition: .5s ease-in-out;
+  transition: .5s ease-in-out;
+}
+
+label .hamburger:after, label .hamburger:before {
+  -webkit-transition: .5s ease-in-out;
+  transition: .5s ease-in-out;
+  content: "";
+  position: absolute;
+  display: block;
+  width: 100%;
+  height: 100%;
+  background: #69d2e7;
+}
+
+label .hamburger:before { top: -10px; }
+
+label .hamburger:after { bottom: -10px; }
+
+label input { display: none; }
+
+label input:checked + .menu {
+  box-shadow: 0 0 0 100vw #FFF, 0 0 0 100vh #FFF;
+  border-radius: 0;
+  
+}
+
+label input:checked + .menu .hamburger {
+  -webkit-transform: rotate(45deg);
+  transform: rotate(45deg);
+  
+}
+
+label input:checked + .menu .hamburger:after {
+  -webkit-transform: rotate(90deg);
+  transform: rotate(90deg);
+  bottom: 0;
+  
+}
+
+label input:checked + .menu .hamburger:before {
+  -webkit-transform: rotate(90deg);
+  transform: rotate(90deg);
+  top: 0;
+  
+}
+
+label input:checked + .menu + ul { opacity: 1; }
+
+label ul {
+  z-index: 200;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  opacity: 0;
+  -webkit-transition: .25s 0s ease-in-out;
+  transition: .25s 0s ease-in-out;
+}
+
+label a {
+  margin-bottom: 1em;
+  display: block;
+  color: #f38630;
+  text-decoration: none;
+  
+}
+
+/* CSS MAIN */
+main {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    width: 100%;
+    margin: 20px 0;
+}
+/* --------------------- */
+
+.kiri {
+    width: 100%;
+    margin: 10px;
+}
+
+.kanan {
+    width: 100%;
+    margin: 10px;
+}
+
+/* CSS UNTUK KOMPONEN BAGIAN KIRI */
+.article {
+    width: auto;
+    padding: 20px;
+}
+
+.article-img {
+    max-width: 100%;
+    border-radius: 10px;
+}
+
+.article-text {
+    width: auto;
+    margin-top: 40px;
+    color: black;
+    text-align: center;
+    font-size: 20px;
+}
+
+.article-akun {
+     color: black;
+    width: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: nowrap;
+    margin-top: 40px;
+}
+
+.art-akun-photo {
+    width: 48px;
+    height: 48px;
+}
+
+.art-akun-photo img {
+    width: inherit;
+    height: inherit;
+    border-radius: 24px;
+}
+
+.art-akun-nama {
+    padding-left: 20px;
+}
+
+.art-akun-nama p {
+    color: black;
+}
+
+.article-line {
+    margin-top: 40px;
+    margin-left: 50%;
+    transform: translate(-50%);
+    width: 130px;
+    height: 5px;
+    background-color: #edf0f4;
+}
+
+.article-title {
+    width: auto;
+    color: black;
+    margin: 40px 0;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.article-list {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.art-list-number {
+    width: 48px;
+    height: 48px;
+    border-radius: 24px;
+    background-color: #edf0f4;
+    color: black;
+    font-size: 20px;
+    font-weight: bold;
+    line-height: 48px;
+    text-align: center;
+}
+
+.art-list-text {
+    margin-left: 20px;
+    color: black;
+    font-size: 18px;
+}
+/* ------------------------------------- */
+
+/* CSS UNTUK KOMPONEN BAGIAN KANAN */
+#form{
+    border: 1px solid;
+    padding: 40px 40px 40px 40px;
+}
+/* CSS JIKA DIBUKA MENGGUNAKAN DESKTOP */
+@media only screen and (min-width: 768px) {
+    main { flex-wrap: nowrap;}
+    .kiri { width: 55%;}
+    .kanan { width: 45%;}
+    .article { padding: 20px 10px 20px 60px;}
+    .article-text {font-size: 28px;}
+    .form { 
+        margin: 20px 60px 20px 10px;
+        padding: 40px;
+    }
+}
+
+.packet{
+    border: 1px solid black;
+    background-color: gray;
+    display: flex;
+    color: black;
+    justify-content: center;
+    padding-top: 50px;
+    padding-bottom: 50px;
+}
+#lampu{
+    width: 40px;
+    height: 40px;
+}
+#paketa{
+    border: 1px solid black;
+       padding-top: 40px;
+        padding-bottom: 40px;
+        margin-top: 40px;
+        color: black;
+        display: flex;
+        justify-content: space-around;
+}
+#paketb{
+    color: black;
+    border: 1px solid black;
+    padding-top: 40px;
+     padding-bottom: 40px;
+     display: flex;
+     justify-content: space-around;
+}
+#call{
+    border: 1px solid black;
+    display: flex;
+    justify-content: center;
+    padding-bottom: 150px;
+}
+#call h2{
+    color: black;
+    padding-top:50px ;
+}
+#call p {
+    color: black;
+    padding-top: 30px;
+    margin-bottom: 40px;
+}
+#call button{
+    width: 300px;
+    height: 50px;
+    color: white;
+    background-color: black;
+}
+#footer-content {
+    border: 1px solid black;
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+  }
